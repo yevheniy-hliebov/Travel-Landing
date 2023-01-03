@@ -1,0 +1,11 @@
+.footer {
+    background-color: var(--header-footer-bg);
+}
+.footer__container {
+    min-height: 64px;
+    padding: 15px 0; 
+}
+.footer__copywriting {
+    text-align: center;
+    margin-top: 24px;
+}

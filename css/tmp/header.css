@@ -1,0 +1,10 @@
+.header {
+    background-color: var(--header-footer-bg);
+}
+.header__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 64px;
+    padding: 15px 0; 
+}

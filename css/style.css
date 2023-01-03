@@ -1,0 +1,91 @@
+@import url(./reset.css);
+@import url(./tmp/header.css);
+@import url(./tmp/footer.css);
+
+:root{
+    --header-footer-bg: #e4e4e4;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main{
+    flex: 1;
+}
+
+/*=======================================
+    NAVIGATIONS
+=======================================*/
+.nav__wraper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    column-gap: 36px;
+    row-gap: 24px;
+}
+
+.nav__body {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 24px;
+    row-gap: 14px;
+}
+
+.nav__item{
+    position: relative;
+    cursor: pointer;
+}
+.nav__item:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background-color: black;
+}
+
+
+/*=======================================
+    CONTAINER
+=======================================*/
+[class*="__container"]{
+    max-width: 1740px;
+    margin: 0 auto;
+}
+
+/*=======================================
+    MEDIA BREAKPOINT CONTAINER
+=======================================*/
+@media screen and (max-width: 1750px){
+    [class*="__container"]{ 
+        max-width: 1540px; 
+    }
+}
+@media screen and (max-width: 1560px){
+    [class*="__container"]{ 
+        max-width: 1200px; 
+    }
+}
+@media screen and (max-width: 1200px){
+    [class*="__container"]{ 
+        max-width: 970px; 
+    }
+}
+@media screen and (max-width: 992px){
+    [class*="__container"]{ 
+        max-width: 750px; 
+    }
+}
+@media screen and (max-width: 768px){
+    [class*="__container"]{
+        margin: 0 15px;
+    }
+}
