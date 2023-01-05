@@ -6,30 +6,254 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
 
-    <title>Start Template</title>
+    <title>TRAVELx</title>
     <link rel="icon" type="image/x-icon" href="./img/logo.svg">
 </head>
 <body>
+    <!-- SVG IMAGES -->
+    <svg style="display: none;">
+        <symbol id="icon-facebook">
+            <path d="M7.14599 18V9.80271H10.4038L10.8881 6.59321H7.14599V4.54888C7.14599 3.62274 7.44998 2.98864 9.01585 2.98864H11V0.127189C10.0346 0.0393664 9.06422 -0.00303849 8.0933 0.000169193C5.21369 0.000169193 3.23661 1.4924 3.23661 4.23183V6.58721H0V9.79671H3.24368V18H7.14599Z"/>
+        </symbol>
+        <symbol id="icon-twitter">
+            <path d="M16.1507 4.90812C16.1626 5.08354 16.1626 5.25796 16.1626 5.43237C16.1626 10.77 12.4503 16.9207 5.66599 16.9207C3.57582 16.9207 1.63403 16.2581 0 15.1073C0.296764 15.1444 0.582536 15.1575 0.891207 15.1575C2.55179 15.1619 4.16536 14.5542 5.47181 13.4324C4.70189 13.4171 3.95554 13.1391 3.33698 12.6372C2.71841 12.1353 2.2585 11.4345 2.02147 10.6327C2.24954 10.6698 2.47853 10.6949 2.7185 10.6949C3.04916 10.6949 3.38164 10.6447 3.69031 10.5575C2.85476 10.3729 2.10343 9.87727 1.56407 9.15489C1.02472 8.43252 0.730637 7.52799 0.731834 6.59513V6.54501C1.22369 6.84472 1.79432 7.03217 2.39884 7.05723C1.89241 6.68894 1.47715 6.18919 1.19011 5.60256C0.903077 5.01594 0.753187 4.36068 0.753816 3.69524C0.753816 2.94546 0.936088 2.25783 1.25575 1.65841C2.18281 2.90639 3.33905 3.92736 4.64961 4.65518C5.96016 5.38301 7.39579 5.80146 8.86353 5.88344C8.80674 5.58273 8.77193 5.27099 8.77193 4.95824C8.77169 4.42795 8.86696 3.90279 9.05228 3.41281C9.2376 2.92283 9.50935 2.47763 9.85199 2.10265C10.1946 1.72767 10.6014 1.43028 11.0492 1.22746C11.4969 1.02465 11.9768 0.920391 12.4613 0.920655C13.5238 0.920655 14.4828 1.40781 15.1569 2.19568C15.9829 2.02088 16.775 1.69091 17.4981 1.22037C17.2227 2.1534 16.646 2.94457 15.8759 3.44565C16.6085 3.35421 17.3244 3.14339 18 2.82017C17.4954 3.62518 16.8702 4.3311 16.1507 4.90812V4.90812Z"/>
+        </symbol>
+        <symbol id="icon-instagram">
+            <path d="M8.99499 4.36816C7.76918 4.36816 6.59357 4.85436 5.72678 5.7198C4.86 6.58524 4.37305 7.75902 4.37305 8.98293C4.37305 10.2068 4.86 11.3806 5.72678 12.2461C6.59357 13.1115 7.76918 13.5977 8.99499 13.5977C10.2208 13.5977 11.3964 13.1115 12.2632 12.2461C13.13 11.3806 13.6169 10.2068 13.6169 8.98293C13.6169 7.75902 13.13 6.58524 12.2632 5.7198C11.3964 4.85436 10.2208 4.36816 8.99499 4.36816V4.36816ZM8.99499 11.9799C8.19864 11.9799 7.4349 11.6641 6.87179 11.1018C6.30868 10.5396 5.99233 9.77706 5.99233 8.98194C5.99233 8.18682 6.30868 7.42426 6.87179 6.86203C7.4349 6.29979 8.19864 5.98393 8.99499 5.98393C9.79135 5.98393 10.5551 6.29979 11.1182 6.86203C11.6813 7.42426 11.9977 8.18682 11.9977 8.98194C11.9977 9.77706 11.6813 10.5396 11.1182 11.1018C10.5551 11.6641 9.79135 11.9799 8.99499 11.9799V11.9799Z"/>
+            <path d="M13.8004 5.27425C14.3958 5.27425 14.8784 4.79258 14.8784 4.19841C14.8784 3.60423 14.3958 3.12256 13.8004 3.12256C13.205 3.12256 12.7224 3.60423 12.7224 4.19841C12.7224 4.79258 13.205 5.27425 13.8004 5.27425Z"/>
+            <path d="M17.5252 3.10468C17.2938 2.50806 16.9402 1.96624 16.487 1.51392C16.0338 1.0616 15.491 0.708746 14.8933 0.477937C14.194 0.215818 13.4552 0.0740855 12.7083 0.0587749C11.7457 0.0168588 11.4409 0.00488281 8.99995 0.00488281C6.55904 0.00488281 6.24618 0.00488271 5.2916 0.0587749C4.54532 0.0733027 3.80702 0.215064 3.10857 0.477937C2.51077 0.708477 1.96784 1.06124 1.51461 1.51359C1.06139 1.96595 0.707868 2.5079 0.476742 3.10468C0.214164 3.8029 0.0725363 4.54065 0.0579282 5.28632C0.0149473 6.2464 0.00195312 6.55079 0.00195312 8.98891C0.00195312 11.426 0.00195312 11.7364 0.0579282 12.6915C0.0729216 13.438 0.213859 14.1745 0.476742 14.8741C0.708517 15.4707 1.06238 16.0124 1.51572 16.4647C1.96905 16.917 2.5119 17.2699 3.10957 17.5009C3.8067 17.7735 4.54531 17.9254 5.2936 17.95C6.25617 17.9919 6.56104 18.0049 9.00195 18.0049C11.4429 18.0049 11.7557 18.0049 12.7103 17.95C13.4571 17.9348 14.1959 17.7934 14.8953 17.5318C15.4928 17.3005 16.0355 16.9473 16.4886 16.4949C16.9417 16.0424 17.2955 15.5006 17.5272 14.9041C17.79 14.2055 17.931 13.469 17.946 12.7224C17.989 11.7624 18.002 11.458 18.002 9.01985C18.002 6.58173 18.002 6.27235 17.946 5.31726C17.9343 4.56104 17.792 3.81252 17.5252 3.10468V3.10468ZM16.3077 12.6177C16.3013 13.1928 16.1961 13.7626 15.9968 14.3023C15.8467 14.6904 15.6169 15.0428 15.3222 15.3369C15.0275 15.631 14.6744 15.8602 14.2856 16.0099C13.7511 16.2079 13.1865 16.3129 12.6163 16.3203C11.6668 16.3642 11.3989 16.3751 8.96397 16.3751C6.52705 16.3751 6.27816 16.3751 5.31059 16.3203C4.74077 16.3133 4.17642 16.2083 3.64234 16.0099C3.2522 15.8612 2.89767 15.6323 2.60169 15.3382C2.30571 15.044 2.07487 14.6911 1.9241 14.3023C1.72763 13.7684 1.62254 13.2053 1.61324 12.6366C1.57026 11.6885 1.56026 11.4211 1.56026 8.98991C1.56026 6.55778 1.56026 6.30927 1.61324 5.34221C1.6197 4.76738 1.72484 4.19792 1.9241 3.65858C2.22896 2.87115 2.85369 2.25139 3.64234 1.94999C4.17669 1.75253 4.74087 1.64756 5.31059 1.63961C6.26117 1.5967 6.52805 1.58472 8.96397 1.58472C11.3999 1.58472 11.6498 1.58472 12.6163 1.63961C13.1865 1.64646 13.7512 1.75146 14.2856 1.94999C14.6744 2.09997 15.0274 2.32944 15.3221 2.62368C15.6168 2.91792 15.8466 3.27042 15.9968 3.65858C16.1933 4.19246 16.2984 4.75554 16.3077 5.32424C16.3507 6.27335 16.3617 6.53981 16.3617 8.97195C16.3617 11.4031 16.3617 11.6646 16.3187 12.6187H16.3077V12.6177Z"/>
+        </symbol>
+
+        <!-- arrow-paginate -->
+        <symbol id="icon-arrow-paginate">
+            <path d="M10.8236 1.89562L4.64483 8.02296L10.8381 14.1356L8.92656 16.0179L0.830821 8.02749L8.90757 0.0178963L10.8236 1.89562Z"/>
+        </symbol>
+    </svg>
 
     <!-- HEADER -->
     <header class="header">
-        <div class="header__container">
-            <div class="header__nav__wraper nav__wraper">
-                <a href="" class="header__logo logo"><img src="./img/logo.svg" alt=""></a>
+        <div class="header__nav__wraper nav__wraper">
+            <a href="" class="header__logo logo">
+                <img src="./img/logo.svg" alt="">
+                TRAVELx
+            </a>
 
-                <nav class="header__nav nav">
-                    <ul class="nav__body">
-                        <li class="nav__item"><a href="./index.html" class="nav__link">Home</a></li>
-                        <li class="nav__item"><a href="" class="nav__link"></a>About Us</li>
-                        <li class="nav__item"><a href="" class="nav__link"></a>Contact</li>
-                    </ul>
-                </nav>
+            <nav class="header__nav nav">
+                <ul class="nav__body">
+                    <li class="nav__item"><a href="" class="nav__link">Destinations</a></li>
+                    <li class="nav__item"><a href="" class="nav__link">Activities</a></li>
+                    <li class="nav__item"><a href="" class="nav__link">About Us</a></li>
+                    <li class="nav__item"><a href="" class="nav__link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="burger-icon">
+                <span></span>
             </div>
+        </div>
+        <div class="header__content content-header">
+            <!-- header slider -->
+            <div class="content-header__slider slider">
+                <!-- slide -->
+                <div class="slider__slide slide slide--current">
+                    <div class="slide__bg-image">
+                        <img src="./img/header-bg/bg-01.jpg" alt="background-img">
+                    </div>
+
+                    <div class="slide__content">
+                        <div class="slide__content__text">
+                            <p class="slide__sub-title">EXPLORE</p>
+                            <h2 class="slide__title">Norway</h2>
+                        </div>
+
+                        <div class="slide__card-trip card-trip-slide">
+                            <a href="" class="card-trip-slide__item">
+                                <div class="card-trip-slide__location">
+                                    <h3 class="card-trip-slide__title">Trondheim</h3>
+                                    <p class="card-trip-slide__desc">Plan a trip</p>
+                                </div>
+                            </a>
+                            <a href="" class="card-trip-slide__item">
+                                <div class="card-trip-slide__location">
+                                    <h3 class="card-trip-slide__title">Geirangerfjord</h3>
+                                    <p class="card-trip-slide__desc">Plan a trip</p>
+                                </div>
+                            </a>
+                            <a href="" class="card-trip-slide__item">
+                                <div class="card-trip-slide__location">
+                                    <h3 class="card-trip-slide__title">Lofoten</h3>
+                                    <p class="card-trip-slide__desc">Plan a trip</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider__slide slide">
+                    <div class="slide__bg-image">
+                        <img src="./img/header-bg/bg-02.jpg" alt="background-img">
+                    </div>
+
+                    <div class="slide__content">
+                        <div class="slide__content__text">
+                            <p class="slide__sub-title">EXPLORE</p>
+                            <h2 class="slide__title">United Kingdom</h2>
+                        </div>
+
+                        <div class="slide__card-trip card-trip-slide">
+                            <a href="" class="card-trip-slide__item">
+                                <div class="card-trip-slide__location">
+                                    <h3 class="card-trip-slide__title">Lake District</h3>
+                                    <p class="card-trip-slide__desc">Plan a trip</p>
+                                </div>
+                            </a>
+                            <a href="" class="card-trip-slide__item">
+                                <div class="card-trip-slide__location">
+                                    <h3 class="card-trip-slide__title">Cardiff</h3>
+                                    <p class="card-trip-slide__desc">Plan a trip</p>
+                                </div>
+                            </a>
+                            <a href="" class="card-trip-slide__item">
+                                <div class="card-trip-slide__location">
+                                    <h3 class="card-trip-slide__title">Newquay</h3>
+                                    <p class="card-trip-slide__desc">Plan a trip</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider__slide slide">
+                    <div class="slide__bg-image">
+                        <img src="./img/header-bg/bg-03.jpg" alt="background-img">
+                    </div>
+
+                    <div class="slide__content">
+                        <div class="slide__content__text">
+                            <p class="slide__sub-title">EXPLORE</p>
+                            <h2 class="slide__title">Germany</h2>
+                        </div>
+
+                        <div class="slide__card-trip card-trip-slide">
+                            <a href="" class="card-trip-slide__item">
+                                <div class="card-trip-slide__location">
+                                    <h3 class="card-trip-slide__title">Heidelberg</h3>
+                                    <p class="card-trip-slide__desc">Plan a trip</p>
+                                </div>
+                            </a>
+                            <a href="" class="card-trip-slide__item">
+                                <div class="card-trip-slide__location">
+                                    <h3 class="card-trip-slide__title">Stuttgart</h3>
+                                    <p class="card-trip-slide__desc">Plan a trip</p>
+                                </div>
+                            </a>
+                            <a href="" class="card-trip-slide__item">
+                                <div class="card-trip-slide__location">
+                                    <h3 class="card-trip-slide__title">Dresden</h3>
+                                    <p class="card-trip-slide__desc">Plan a trip</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider__slide slide">
+                    <div class="slide__bg-image">
+                        <img src="./img/header-bg/bg-04.jpg" alt="background-img">
+                    </div>
+
+                    <div class="slide__content">
+                        <div class="slide__content__text">
+                            <p class="slide__sub-title">EXPLORE</p>
+                            <h2 class="slide__title">Netherlands</h2>
+                        </div>
+
+                        <div class="slide__card-trip card-trip-slide">
+                            <a href="" class="card-trip-slide__item">
+                                <div class="card-trip-slide__location">
+                                    <h3 class="card-trip-slide__title">Rotterdam</h3>
+                                    <p class="card-trip-slide__desc">Plan a trip</p>
+                                </div>
+                            </a>
+                            <a href="" class="card-trip-slide__item">
+                                <div class="card-trip-slide__location">
+                                    <h3 class="card-trip-slide__title">Delft</h3>
+                                    <p class="card-trip-slide__desc">Plan a trip</p>
+                                </div>
+                            </a>
+                            <a href="" class="card-trip-slide__item">
+                                <div class="card-trip-slide__location">
+                                    <h3 class="card-trip-slide__title">West Frisian Islands</h3>
+                                    <p class="card-trip-slide__desc">Plan a trip</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+                <div class="slider__paginate">
+                    <div class="slider__paginate__row-btn">
+                        <button id="prev" class="slider__paginate-btn">
+                            <svg class="slider__paginate__prev" width="11" height="16">
+                                <use href="#icon-arrow-paginate">
+                                    <path d="M7.14599 18V9.80271H10.4038L10.8881 6.59321H7.14599V4.54888C7.14599 3.62274 7.44998 2.98864 9.01585 2.98864H11V0.127189C10.0346 0.0393664 9.06422 -0.00303849 8.0933 0.000169193C5.21369 0.000169193 3.23661 1.4924 3.23661 4.23183V6.58721H0V9.79671H3.24368V18H7.14599Z"/>
+                                </use>
+                            </svg>
+                        </button>
+                        <button id="next" class="slider__paginate-btn slider__paginate-btn--active">
+                            <svg class="slider__paginate__next" width="11" height="16">
+                                <use href="#icon-arrow-paginate">
+                                    <path d="M7.14599 18V9.80271H10.4038L10.8881 6.59321H7.14599V4.54888C7.14599 3.62274 7.44998 2.98864 9.01585 2.98864H11V0.127189C10.0346 0.0393664 9.06422 -0.00303849 8.0933 0.000169193C5.21369 0.000169193 3.23661 1.4924 3.23661 4.23183V6.58721H0V9.79671H3.24368V18H7.14599Z"/>
+                                </use>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="slider__paginate__number-slide">
+                        <p class="slider__paginate__number-current">01</p>
+                        <p class="slider__paginate__number-hr">/</p>
+                        <p class="slider__paginate__number-length">04</p>
+                    </div>
+                </div>
+                <div class="slider__scroll-bar-paginate">
+                    <div class="slider__scroll-bar-paginate__length">
+                        <!-- <div class="slider__scroll-bar-paginate__line-item"></div> -->
+                    </div>
+                    <div class="slider__scroll-bar-paginate__current"></div>
+                </div>
+            </div>
+
+            <!-- other content-element -->
+            <div class="social-links">
+                <a href="" class="social-link">
+                    <svg width="11" height="18">
+                        <use href="#icon-facebook">
+                            <path d="M7.14599 18V9.80271H10.4038L10.8881 6.59321H7.14599V4.54888C7.14599 3.62274 7.44998 2.98864 9.01585 2.98864H11V0.127189C10.0346 0.0393664 9.06422 -0.00303849 8.0933 0.000169193C5.21369 0.000169193 3.23661 1.4924 3.23661 4.23183V6.58721H0V9.79671H3.24368V18H7.14599Z"/>
+                        </use>
+                    </svg>
+                </a>
+                <a href="" class="social-link">
+                    <svg width="18" height="17">
+                        <use href="#icon-twitter">
+                            <path d="M7.14599 18V9.80271H10.4038L10.8881 6.59321H7.14599V4.54888C7.14599 3.62274 7.44998 2.98864 9.01585 2.98864H11V0.127189C10.0346 0.0393664 9.06422 -0.00303849 8.0933 0.000169193C5.21369 0.000169193 3.23661 1.4924 3.23661 4.23183V6.58721H0V9.79671H3.24368V18H7.14599Z"/>
+                        </use>
+                    </svg>
+                </a>
+                <a href="" class="social-link">
+                    <svg width="19" height="19">
+                        <use href="#icon-instagram">
+                            <path d="M7.14599 18V9.80271H10.4038L10.8881 6.59321H7.14599V4.54888C7.14599 3.62274 7.44998 2.98864 9.01585 2.98864H11V0.127189C10.0346 0.0393664 9.06422 -0.00303849 8.0933 0.000169193C5.21369 0.000169193 3.23661 1.4924 3.23661 4.23183V6.58721H0V9.79671H3.24368V18H7.14599Z"/>
+                        </use>
+                    </svg>
+                </a>
+            </div>
+            <a href="#main" class="see-more">
+                <p>See More</p>
+            </a>
         </div>
     </header>
 
     <!-- MAIN -->
-    <main class="main">
+    <main id="main" class="main">
         <div class="main__container">
             Main Content
         </div>
@@ -44,8 +268,8 @@
                 <nav class="footer__nav nav">
                     <ul class="nav__body">
                         <li class="nav__item"><a href="./index.html" class="nav__link">Home</a></li>
-                        <li class="nav__item"><a href="" class="nav__link"></a>About Us</li>
-                        <li class="nav__item"><a href="" class="nav__link"></a>Contact</li>
+                        <li class="nav__item"><a href="" class="nav__link">About Us</a></li>
+                        <li class="nav__item"><a href="" class="nav__link">Contact</a></li>
                     </ul>
                 </nav>
             </div>
