@@ -39,14 +39,14 @@ Slider();
 document.addEventListener("click", function (e) {
     const targetElement = e.target;
     if (targetElement.closest(".slider__paginate-btn")){
-        if (targetElement.closest("#prev")){
+        if (targetElement.closest(".prev")){
             if(slideIndex > 1){
                 slideIndex--;
                 next = false;
                 Slider();
             }
         }
-        else if (targetElement.closest("#next")){
+        else if (targetElement.closest(".next")){
             if(slideIndex < slides.length){
                 slideIndex++;
                 next = true;
@@ -100,3 +100,36 @@ function Slider(){
     else numberSlideCurrent.textContent = `${slideIndex}`;
 }
 // Header Slider End
+
+// Swiper js
+new Swiper('.activies__slider', {
+    navigation: {
+        nextEl: '.activies__slider__nav-btn--next',
+        prevEl: '.activies__slider__nav-btn--prev'
+    },
+
+    slidesPerView: 4,
+    spaceBetween: 25,
+
+    breakpoints: {
+        // when window width is >= 320px
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 10
+        },
+        700: {
+          slidesPerView: 2,
+          spaceBetween: 15
+        },
+        // when window width is >= 480px
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 25
+        },
+        // when window width is >= 640px
+        1560: {
+          slidesPerView: 4
+        }
+    },
+});
+// Swiper js End
