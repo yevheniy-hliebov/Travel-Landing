@@ -16,6 +16,7 @@
 
 :root{
     --header-footer-bg: #F4F4F4;
+    --activies-slider-padding: 100px;
 }
 
 body{
@@ -39,7 +40,10 @@ main{
 }
 
 [class*="content__"]{
-    margin: 65px 0;
+    margin: 0 0 100px;
+}
+[class*="content__"]:first-child{
+    margin-top: 65px;
 }
 
 .logo{
@@ -54,6 +58,9 @@ main{
 =======================================*/
 .title {
     text-align: center;
+}
+.title + *{
+    margin-top: 50px;
 }
 .title__label {
     font-weight: 600;
@@ -80,6 +87,9 @@ main{
     }
 }
 @media screen and (max-width: 500px){
+    .title + *{
+        margin-top: 25px;
+    }
     .title__label {
         font-size: 14px;
         margin-bottom: 15px;
@@ -100,8 +110,7 @@ main{
     Activies Slider
 =======================================*/
 .activies__slider{
-    margin-top: 50px;
-    padding: 0 100px 0;
+    padding: 0 var(--activies-slider-padding) 0;
     background-color: #fff;
     position: relative;
     z-index: 1;
@@ -113,7 +122,7 @@ main{
     position: absolute;
     z-index: 3;
     top: 0;
-    width: 100px;
+    width: var(--activies-slider-padding);
     height: 100%;
     background-color: inherit;
 }
@@ -258,20 +267,127 @@ main{
         bottom: 0;
         transform: translateY(0);
     }
-
+    :root{
+        --activies-slider-padding: 0px;
+    }
     .activies__slider{
-        margin-top: 50px;
-        padding: 0 0 70px 0;
+        padding-bottom: 70px;
         background-color: #fff;
         position: relative;
         z-index: 1;
         height: 620px;
     }
-    .activies__slider::before,
-    .activies__slider::after{
-        width: 0;
+}
+
+/*=======================================
+    Philosophy
+=======================================*/
+.content__philosophy {
+}
+.philosophy__container {
+    padding: 0 var(--activies-slider-padding);
+}
+.philosophy__wrapper {
+}
+.philosophy__content {
+    display: grid; 
+    grid-template-columns: repeat(2, auto);
+    column-gap: 80px;
+    row-gap: 30px;
+}
+.philosophy__image {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 10px;
+    overflow: hidden;
+}
+.philosophy__image img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+.philosophy__list {
+    max-width: 550px;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+}
+.philosophy-list__text-item {
+    max-width: 550px;
+}
+
+.philosophy-list__text-item__title {
+    position: relative;
+}
+.philosophy-list__text-item__title,
+.philosophy-list__text{
+    padding-left: 70px;
+}
+.philosophy-list__text-item__title + .philosophy-list__text{
+    margin-top: 20px;
+}
+.philosophy-list__text-item__number {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1.23;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #9B9B9B;
+}
+.philosophy-list__value {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.21;
+    text-transform: capitalize;
+    color: #3D3D3D;
+}
+.philosophy-list__text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.87;
+    color: #6D6D6D;
+}
+.philosophy-list__text p+p{
+    margin-top: 0.8em;
+}
+@media screen and (max-width: 1200px){
+    .philosophy__content{
+        grid-template-columns: repeat(1, auto);
+    }
+    .philosophy__image{
+        max-height: 350px;
+    }
+    .philosophy__list{
+        max-width: 100%;
+        align-items: center;
+        row-gap: 35px;
     }
 
+    .philosophy-list__text-item__title,
+    .philosophy-list__text{
+        padding-left: 50px;
+    }
+    .philosophy-list__text-item__title + .philosophy-list__text{
+        margin-top: 12px;
+    }
+    .philosophy-list__text-item__number {
+        font-size: 22px;
+    }
+    .philosophy-list__value {
+        font-size: 28px;
+    }
+    .philosophy-list__text {
+        font-size: 14px;
+    }
 }
 
 
