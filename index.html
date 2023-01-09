@@ -410,6 +410,102 @@
                 </div>
             </div>
         </section>
+
+
+        <section class="content__appart appart">
+            <div class="appart__container">
+                <div class="appart__title title">
+                    <div class="title__label">BEAUTIES</div>
+                    <h2 class="title__value">Hotels and Appartements</h2>
+                </div>
+
+                <div class="appart__cards">
+                    <div class="appart__card card-appart">
+                        <a href="" class="card-appart__image">
+                            <img src="./img/apparts/01.jpg" alt="appart-image">
+                        </a>
+                        <div class="card-appart__row">
+                            <h4 class="card-appart__title">
+                                <a href="" class="card-appart__title-link">Reine</a>
+                            </h4>
+                        </div>
+                        <div class="card-appart__price">$720</div>
+                    </div>
+                    <div class="appart__card card-appart">
+                        <a href="" class="card-appart__image">
+                            <img src="./img/apparts/02.jpg" alt="appart-image">
+                        </a>
+                        <div class="card-appart__row">
+                            <h4 class="card-appart__title">
+                                <a href="" class="card-appart__title-link">NORWAY</a>
+                            </h4>
+                        </div>
+                        <div class="card-appart__price">$350</div>
+                    </div>
+                    <div class="appart__card card-appart">
+                        <a href="" class="card-appart__image">
+                            <img src="./img/apparts/03.jpg" alt="appart-image">
+                        </a>
+                        <div class="card-appart__row">
+                            <h4 class="card-appart__title">
+                                <a href="" class="card-appart__title-link">Bergen</a>
+                            </h4>
+                        </div>
+                        <div class="card-appart__price">$670</div>
+                    </div>
+                </div>
+
+                <form class="appart__search-form search-form">
+                    <div class="search-form__input-list">
+                        <div class="search-form__input-item">
+                            <div class="search-form__title">Date</div>
+                            <div class="search-form__select dropdown-btn-form">
+                                <button class="search-form__select-btn dropdown-btn-form__btn">Select</button>
+                                <ul class="search-form__select-list dropdown-btn-form__list">
+                                    <li class="search-form__select-list-item dropdown-btn-form__list-item" data-value="Mon, 2 Nov">Mon, 2 Nov</li>
+                                    <li class="search-form__select-list-item dropdown-btn-form__list-item" data-value="Tue, 3 Nov">Tue, 3 Nov</li>
+                                    <li class="search-form__select-list-item dropdown-btn-form__list-item" data-value="Wen, 4 Nov">Wen, 4 Nov</li>
+                                    <li class="search-form__select-list-item dropdown-btn-form__list-item" data-value="Thu, 5 Nov">Thu, 5 Nov</li>
+                                    <li class="search-form__select-list-item dropdown-btn-form__list-item" data-value="Fri, 6 Nov">Fri, 6 Nov</li>
+                                    <li class="search-form__select-list-item dropdown-btn-form__list-item" data-value="Sat, 7 Nov">Sat, 7 Nov</li>
+                                    <li class="search-form__select-list-item dropdown-btn-form__list-item" data-value="Sun, 8 Nov">Sun, 8 Nov</li>
+                                </ul>
+                                <input class="dropdown-btn-form__value" type="text" name="date" value="" style="display: none;">
+                            </div>
+                        </div>
+                        <div class="search-form__input-item">
+                            <div class="search-form__title">Location</div>
+                            <div class="search-form__select dropdown-btn-form">
+                                <button class="search-form__select-btn dropdown-btn-form__btn">Select</button>
+                                <ul class="search-form__select-list dropdown-btn-form__list">
+                                    <li class="search-form__select-list-item dropdown-btn-form__list-item" data-value="Morocco">Morocco</li>
+                                    <li class="search-form__select-list-item dropdown-btn-form__list-item" data-value="Noraway">Noraway</li>
+                                    <li class="search-form__select-list-item dropdown-btn-form__list-item" data-value="Andorra">Andorra</li>
+                                    <li class="search-form__select-list-item dropdown-btn-form__list-item" data-value="Finland">Finland</li>
+                                    <li class="search-form__select-list-item dropdown-btn-form__list-item" data-value="Philippines">Philippines</li>
+                                </ul>
+                                <input class="dropdown-btn-form__value" type="text" name="date" value="" style="display: none;">
+                            </div>
+                        </div>
+                        <div class="search-form__input-item">
+                            <div class="search-form__title">PLACE</div>
+                            <div class="search-form__select dropdown-btn-form">
+                                <button class="search-form__select-btn dropdown-btn-form__btn">Select</button>
+                                <ul class="search-form__select-list dropdown-btn-form__list">
+                                    <li class="search-form__select-list-item dropdown-btn-form__list-item" data-value="Andorra la Vella">Andorra la Vella</li>
+                                    <li class="search-form__select-list-item dropdown-btn-form__list-item" data-value="Helsinki">Helsinki</li>
+                                    <li class="search-form__select-list-item dropdown-btn-form__list-item" data-value="Manila">Manila</li>
+                                    <li class="search-form__select-list-item dropdown-btn-form__list-item" data-value="Valletta">Valletta</li>
+                                </ul>
+                                <input class="dropdown-btn-form__value" type="text" name="date" value="" style="display: none;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="search-form__btn">SEARCH</button>
+                </form>
+            </div>
+        </section>
     </main>
 
     <!-- FOOTER -->
@@ -478,5 +574,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/dropdown.js"></script>
 </body>
 </html>
