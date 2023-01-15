@@ -45,13 +45,47 @@ main{
     transition: max-width 0.5s ease;
 }
 
+/*=======================================
+    MEDIA BREAKPOINT CONTAINER
+=======================================*/
+@media screen and (max-width: 1675px){
+    [class*="__container"]{ 
+        max-width: 1540px; 
+    }
+}
+@media screen and (max-width: 1560px){
+    [class*="__container"]{ 
+        max-width: 1200px; 
+    }
+}
+@media screen and (max-width: 1200px){
+    [class*="__container"]{ 
+        max-width: 970px; 
+    }
+}
+@media screen and (max-width: 992px){
+    [class*="__container"]{ 
+        max-width: 750px; 
+    }
+}
+@media screen and (max-width: 768px){
+    [class*="__container"]{
+        margin: 0 15px;
+    }
+}
+
+/*=======================================
+    CONTAINER
+=======================================*/
 [class*="content__"]{
     margin: 0 0 125px;
 }
 [class*="content__"]:first-child{
     margin-top: 65px;
 }
-
+/*=======================================
+    logo
+=======================================*/
 .logo{
     font-weight: 900;
     font-size: 18px;
@@ -65,8 +99,8 @@ main{
 .title {
     text-align: center;
 }
-.title + *{
-    margin-top: 50px;
+.title:not(:last-child){
+    margin-bottom: 50px;
 }
 .title__label {
     font-weight: 600;
@@ -93,8 +127,8 @@ main{
     }
 }
 @media screen and (max-width: 500px){
-    .title + *{
-        margin-top: 25px;
+    .title:not(:last-child){
+        margin-bottom: 25px;
     }
     .title__label {
         font-size: 14px;
@@ -335,8 +369,8 @@ main{
 .philosophy-list__text{
     padding-left: 70px;
 }
-.philosophy-list__text-item__title + .philosophy-list__text{
-    margin-top: 20px;
+.philosophy-list__text-item__title:not(:last-child){
+    margin-bottom: 20px;
 }
 .philosophy-list__text-item__number {
     position: absolute;
@@ -384,8 +418,8 @@ main{
     .philosophy-list__text{
         padding-left: 50px;
     }
-    .philosophy-list__text-item__title + .philosophy-list__text{
-        margin-top: 12px;
+    .philosophy-list__text-item__title:not(:last-child){
+        margin-bottom: 12px;
     }
     .philosophy-list__text-item__number {
         font-size: 22px;
@@ -538,9 +572,6 @@ main{
     position: relative;
     z-index: 2;
 }
-.search-form {
-}
-
 .search-form__inputs{
     display: grid;
     grid-template-columns: repeat(3, minmax(calc(250px - 30px), 321px)) minmax(calc(250px - 30px), 261px);
@@ -617,9 +648,9 @@ main{
 
     padding: 26px 22px;
     border: 1px solid #3D3D3D;
-
     background-color: #3D3D3D;
     border-radius: 5px;
+    transition: border 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
 
     font-weight: 600;
     font-size: 18px;
@@ -627,6 +658,18 @@ main{
     letter-spacing: 5px;
     color: #FFFFFF;
     text-transform: uppercase;
+}
+@media (any-hover: hover) {
+    .search-form__btn-submit:hover{
+        border: 1px solid #494949;
+        background-color: #494949;
+    }
+}
+
+.search-form__btn-submit:active{
+    border: 1px solid #303030;
+    background-color: #303030;
+    transform: scale(0.97);
 }
 
 @media screen and (max-width: 1200px){
@@ -649,33 +692,165 @@ main{
     }
 }
 
+/*=======================================
+    Partners
+=======================================*/
+.partners__list {
+    max-width: 1275px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.partners__item {
+    max-width: 230px;
+}
+.partners__item img{
+    max-width: 100%;
+    display: block;
+}
 
+@media screen and (max-width: 1200px){
+    .partners__list{
+        justify-content: center;
+    }
+}
 
 /*=======================================
-    MEDIA BREAKPOINT CONTAINER
+    Reviews
 =======================================*/
-@media screen and (max-width: 1675px){
-    [class*="__container"]{ 
-        max-width: 1540px; 
-    }
+.reviews__container {
+    padding: 15px;
+    position: relative;
 }
-@media screen and (max-width: 1560px){
-    [class*="__container"]{ 
-        max-width: 1200px; 
-    }
+.reviews__bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
 }
-@media screen and (max-width: 1200px){
-    [class*="__container"]{ 
-        max-width: 970px; 
-    }
+.reviews__bg-img img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
 }
+
+
+.reviews__items {
+    margin: 140px auto 100px;
+    max-width: 1155px;
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 350px));
+    gap: 50px;
+}
+
 @media screen and (max-width: 992px){
-    [class*="__container"]{ 
-        max-width: 750px; 
+    .reviews__items {
+        margin: 90px auto 60px;
+        grid-template-columns: repeat(1, minmax(200px, 350px));
+        justify-content: center;
     }
 }
-@media screen and (max-width: 768px){
-    [class*="__container"]{
-        margin: 0 15px;
+
+.reviews__text {
+    position: relative;
+    min-height: 190px;
+    padding: 36px 12px 36px 36px;
+    background-color: #fff;
+    background-image: url("../img/reviews/card-bg.svg");
+    background-repeat: no-repeat;
+    background-position: right center;
+    border-radius: 10px;
+
+    font-size: 12px;
+    line-height: 1.66;
+    color: #474747;
+
+    transition: transform 0.5s ease;
+}
+
+.reviews__text::before{
+    content: "";
+    display: block;
+    height: 25px;
+    background-color: #FF9921;
+    -webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18"><path opacity="0.4" d="M19.82 0.799998L19.34 4.22C18.38 4.14 17.6 4.3 17 4.7C16.4 5.08 15.98 5.64 15.74 6.38C15.52 7.1 15.48 7.94 15.62 8.9H19.82V17.06H11.66V8.9C11.66 6.02 12.33 3.84 13.67 2.36C15.01 0.859999 17.06 0.339998 19.82 0.799998ZM8.96 0.799998L8.48 4.22C7.52 4.14 6.74 4.3 6.14 4.7C5.54 5.08 5.12 5.64 4.88 6.38C4.66 7.1 4.62 7.94 4.76 8.9H8.96V17.06H0.8V8.9C0.8 6.02 1.47 3.84 2.81 2.36C4.15 0.859999 6.2 0.339998 8.96 0.799998Z"/></svg>');
+    mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18"><path opacity="0.4" d="M19.82 0.799998L19.34 4.22C18.38 4.14 17.6 4.3 17 4.7C16.4 5.08 15.98 5.64 15.74 6.38C15.52 7.1 15.48 7.94 15.62 8.9H19.82V17.06H11.66V8.9C11.66 6.02 12.33 3.84 13.67 2.36C15.01 0.859999 17.06 0.339998 19.82 0.799998ZM8.96 0.799998L8.48 4.22C7.52 4.14 6.74 4.3 6.14 4.7C5.54 5.08 5.12 5.64 4.88 6.38C4.66 7.1 4.62 7.94 4.76 8.9H8.96V17.06H0.8V8.9C0.8 6.02 1.47 3.84 2.81 2.36C4.15 0.859999 6.2 0.339998 8.96 0.799998Z"/></svg>');
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    margin-bottom: 16px;
+}
+
+.reviews__text::after{
+    content: "";
+    position: absolute;
+    top: calc(100% - 2px);
+    left: 10%;
+
+    width: 24px;
+    height: 15.5px;
+    background-color: #ffffff;
+    -webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 14"><path d="M24 0.399902H0L9.62783 12.8358C10.8288 14.3872 13.1712 14.3872 14.3722 12.8358L24 0.399902Z" fill="white"/></svg>');
+    mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 14"><path d="M24 0.399902H0L9.62783 12.8358C10.8288 14.3872 13.1712 14.3872 14.3722 12.8358L24 0.399902Z" fill="white"/></svg>');
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
+@media (any-hover: hover) {
+    .reviews__text:hover{
+        transform: translateY(3px) scale(1.05);
     }
+}
+
+.reviews__text:not(:last-child){
+    margin-bottom: 40px;
+}
+
+
+.reviews__author {
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+}
+.reviews__author-img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.reviews__author-img img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+.reviews__author-details {
+    font-family: 'Manrope', sans-serif;
+    color: #fff;
+}
+.reviews__author-name {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.55;
+}
+.reviews__author-proffessional {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
 }
