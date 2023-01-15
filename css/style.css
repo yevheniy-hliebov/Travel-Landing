@@ -13,7 +13,10 @@
 
 @import url(./tmp/header.css);
 @import url(./tmp/footer.css);
-@import url(./dropdown.css);
+@import url(./tmp/star-rating.css);
+@import url(./tmp/calendar.css);
+@import url(./tmp/dropdown-date.css);
+@import url(./tmp/dropdown.css);
 
 :root{
     --header-footer-bg: #F4F4F4;
@@ -170,8 +173,10 @@ main{
     object-position: center;
 }
 
-.activies__slider-slide:hover .activies__slider-slide__image{
-    transform: scale(1.1);
+@media (any-hover: hover) {
+    .activies__slider-slide:hover .activies__slider-slide__image{
+        transform: scale(1.05);
+    }
 }
 
 /*=======================================
@@ -428,12 +433,13 @@ main{
     column-gap: 30px;
     row-gap: 25px;
 }
+.appart__cards:not(:last-child){
+    margin-bottom: 60px;
+}
 .appart__card {
     width: 100%;
 }
 .card-appart__image {
-    margin-bottom: 10px;
-
     display: block;
     width: 100%;
     height: 320px;
@@ -443,18 +449,38 @@ main{
     
     transition: height 0.3s ease;
 }
+.card-appart__image:not(:last-child){
+    margin-bottom: 10px;
+}
 .card-appart__image img{
     width: 100%;
     height: 100%;
     display: block;
     object-fit: cover;
     object-position: center;
+
+    transition: transform 0.5s ease;
 }
+
+@media (any-hover: hover) {
+    .card-appart__image:hover img{
+        transform: scale(1.05);
+    }
+}
+
+
 .card-appart__row{
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
     column-gap: 50px;
-    row-gap: 20px;
+    row-gap: 8px;
+}
+.card-appart__row:not(:last-child){
+    margin-bottom: 14px;
+}
+.card-appart__title{
+    min-width: 125px;
 }
 .card-appart__title-link {
     font-weight: 700;
@@ -463,7 +489,6 @@ main{
     color: #2D2D2D;
 }
 .card-appart__price {
-    margin-top: 14px;
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
@@ -509,124 +534,121 @@ main{
 /*=======================================
     Apparts Search Form
 =======================================*/
-.appart__search-form {
-    margin-top: 80px;
+.appart__search {
     position: relative;
     z-index: 2;
 }
-.search-form,
-.search-form__input-list {
-    display: flex;
-    align-items: flex-end;
-    flex-wrap: wrap;
-
-    column-gap: 90px;
-    row-gap: 40px;
-}
-.search-form{
-    justify-content: space-between;
+.search-form {
 }
 
-.search-form__input-list{
-    column-gap: 80px;
-}
+.search-form__inputs{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(calc(250px - 30px), 321px)) minmax(calc(250px - 30px), 261px);
+    align-items: end;
 
-.search-form__input-item{
-    flex-grow: 1;
-    flex-shrink: 0;
-    max-width: 250px;
-    min-width: 178px;
+    column-gap: 50px;
+    row-gap: 20px;
 }
-.search-form__title {
+.search-form__input-block {
+    width: 100%;
+}
+.search-form__input-title {
     font-weight: 600;
     font-size: 12px;
     line-height: 1.25;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     color: #9B9B9B;
-
+}
+.search-form__input-title:not(:last-child){
     margin-bottom: 10px;
 }
-.search-form__select {
-    max-width: 250px;
+.search-form__input-item {
+    width: 100%;
 }
-.search-form__btn,
-.search-form__select-btn {
-    height: 65px;
-    padding: 20px 20px;
+.search-form__input-btn{
+    width: 100%;
+    padding: 26px 22px;
+    padding-right: 55px;
+    border: 1px solid #DBDBDB;
+    border-radius: 5px;
 
     font-weight: 500;
     font-size: 18px;
-    line-height: 1.25;
+    line-height: 1.22;
     letter-spacing: 1px;
-
-    border-radius: 5px;
-}
-.search-form__select-btn{
     color: #4E4E4E;
-    background-color: #F5F5F5;
-    border: 1px solid #DBDBDB;
 }
-.search-form__select-list {
-    margin-top: 1px;
-    border: 1px solid #DBDBDB;
-}
-.search-form__select-list-item{
-    padding: 10px 20px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.25;
-    letter-spacing: 1px;
-    border-top: 1px solid #DBDBDB;
-    border-bottom: 1px solid #DBDBDB;
-}
-.search-form__select-list-item:first-child{
-    border-top: 0px solid #DBDBDB;
-}
-.search-form__select-list-item:last-child{
-    border-bottom: 0px solid #DBDBDB;
+.search-form__input-btn::after{
+    content: '';
+    position: absolute;
+    width: 13px;
+    height: 8px;
+    top: 50%;
+    right: 35px;
+    background-image: url('../img/icons/icon-arrow-down.svg');
+    transform: translateY(-50%);
+    transition: transform 0.5s ease;
 }
 
-.search-form__select-list-item.active{
-    background-color: #e4e4e4;
-}
-.search-form__select-btn:focus, .search-form__select-btn.active{
-    border-color: #e4e4e4;
-}
-.search-form__select-btn:hover{
-    background-color: rgb(230, 232, 240);
-}
-.search-form__select-btn:active{
-    background-color: rgb(216, 218, 226);
-}
-.search-form__select-list-item:hover{
-    background-color: rgb(230, 232, 240);
+.search-form__input-btn.dropdown-date__btn--active::after{
+    transform: translateY(-50%) rotate(180deg);
 }
 
+.search-form__input-btn.dropdown-btn-form__btn.active::after{
+    transform: translateY(-50%) rotate(180deg);
+}
 
-.search-form__btn {
-    max-width: 250px;
-    min-width: 178px;
+.search-form__input-btn:focus,
+.search-form__input-btn.dropdown-date__btn--active,
+.search-form__input-btn.dropdown-btn-form__btn.active {
+    border: 1px solid var(--focus-border-color);
+}
 
+.search-form__input-item .dropdown-date__wrapper{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.search-form__btn-submit{
     text-align: center;
-    text-transform: uppercase;
-    color: #fff;
+    max-width: 261px;
+
+    max-height: 75.96px;
+
+    padding: 26px 22px;
+    border: 1px solid #3D3D3D;
+
     background-color: #3D3D3D;
+    border-radius: 5px;
 
-    transition: all 0.3s ease;
-}
-
-.search-form__btn:hover{
-    background-color: #2e2e2e;
-}
-.search-form__btn:active{
-    transform: translateY(3px);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.22;
+    letter-spacing: 5px;
+    color: #FFFFFF;
+    text-transform: uppercase;
 }
 
 @media screen and (max-width: 1200px){
-    .search-form__input-list {    
-        column-gap: 30px;
+    .search-form__inputs{
+        grid-template-columns: repeat(3, minmax(calc(280px - 30px), 321px));
     }
 }
+@media screen and (max-width: 1200px){
+    .search-form__inputs{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .search-form__btn-submit{
+        width: 100%;
+        max-width: none;
+    }
+}
+@media screen and (max-width: 515px){
+    .search-form__inputs{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
 
 
 /*=======================================

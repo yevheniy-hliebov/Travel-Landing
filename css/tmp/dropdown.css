@@ -1,5 +1,5 @@
 .dropdown-btn-form{
-    max-width: 400px;
+    /* max-width: 400px; */
     position: relative;
 }
 
@@ -37,7 +37,7 @@
 
     max-height: 0;
     visibility: hidden;
-    transition: 0.3s all ease-in;
+    transition: 0.5s all ease-in;
 }
 
 .dropdown-btn-form__list::-webkit-scrollbar{
@@ -68,22 +68,22 @@
     border-radius: 0 0 5px 5px;
 }
 
-.dropdown-btn-form__list-item.active{
+/* .dropdown-btn-form__list-item.active{
     background-color: rgb(226, 231, 255);
-}
+} */
 
-.dropdown-btn-form__btn:focus, .dropdown-btn-form__btn.active{
+/* .dropdown-btn-form__btn:focus, .dropdown-btn-form__btn.active{
     border-color: rgb(141, 167, 255);
-}
+} */
 
-.dropdown-btn-form__btn:hover{
+/* .dropdown-btn-form__btn:hover{
     background-color: rgb(217, 224, 255);
-}
+} */
 
-.dropdown-btn-form__btn:active{
+/* .dropdown-btn-form__btn:active{
     background-color: rgb(202, 211, 253);
-}
+} */
 
-.dropdown-btn-form__list-item:hover{
+/* .dropdown-btn-form__list-item:hover{
     background-color: rgb(217, 224, 255);
-}
+} */

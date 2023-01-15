@@ -68,8 +68,10 @@
     font-size: 18px;
     line-height: 22px;
 }
-.nav__item:hover{
-    transform: scale(1.1);
+@media (any-hover: hover){
+    .nav__item:hover{
+        transform: scale(1.1);
+    }
 }
 
 /*=======================================
@@ -108,11 +110,14 @@
     width: 20px;
 }
 
-.burger-icon:hover span,
-.burger-icon:hover::after,
-.burger-icon:hover::before {
-    width: 35px;
+@media (any-hover: hover){
+    .burger-icon:hover span,
+    .burger-icon:hover::after,
+    .burger-icon:hover::before {
+        width: 35px;
+    }
 }
+
 
 
 /*=======================================
@@ -269,9 +274,11 @@
     transition: filter 0.3s ease, transform 0.1s ease;
 }
 
-.card-trip-slide__item:hover::before{
-    filter: blur(0px);
-    transform: scale(1.02);
+@media (any-hover: hover){
+    .card-trip-slide__item:hover::before{
+        filter: blur(0px);
+        transform: scale(1.02);
+    }
 }
 
 /* card-trip Text */
@@ -347,8 +354,10 @@
     transform: rotate(180deg);
 }
 
-.slider__paginate-btn:hover{
-    fill: #fff;
+@media (any-hover: hover){
+    .slider__paginate-btn:hover{
+        fill: #fff;
+    }
 }
 /*=======================================
     Slider Number Slide
@@ -433,12 +442,14 @@
     transition: transform 0.3s ease;
 }
 
-.social-link:hover{
-    fill: rgba(255, 255, 255, 1);
-}
-
-.social-link:hover svg{
-    transform: scale(1.1);
+@media (any-hover: hover){
+    .social-link:hover{
+        fill: rgba(255, 255, 255, 1);
+    }
+    
+    .social-link:hover svg{
+        transform: scale(1.1);
+    }
 }
 
 /*=======================================
@@ -465,8 +476,10 @@
     transition: padding-left 0.3s ease;
 }
 
-.see-more:hover p{
-    padding-left: 56px;
+@media (any-hover: hover){
+    .see-more:hover p{
+        padding-left: 56px;
+    }
 }
 
 .see-more p::before{

@@ -1,0 +1,60 @@
+:root{
+    --main-color: #1E1E34;
+    --blue-color: #0090FF;
+    --light-blue-color: #d0e3ff;
+    --inactive-color: #B6B6B6;
+
+    --main-bg: #ffffff;
+    --main-border-color: #646464;
+    --light-border-color: #969696;
+    --focus-border-color: #6489cc;
+    --active-border-color: #6b6b6b;
+}
+
+.dropdown-date {
+    display: inline-block;
+    position: relative;
+}
+.dropdown-date__btn {
+    position: relative;
+    padding: 10px;
+    background: var(--main-bg);
+    border: 1px solid var(--main-border-color);
+    border-radius: 7px;
+
+    /* min-width: 300px; */
+}
+
+/* .dropdown-date__btn::after{
+    content: '>';
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%) rotate(90deg);
+    transition: transform 0.5s ease;
+} */
+/* .dropdown-date__btn--active::after{
+    transform: translateY(-50%) rotate(270deg);
+} */
+
+.dropdown-date__btn:focus, .dropdown-date__btn--active{
+    border: 1px solid var(--focus-border-color);
+}
+
+.dropdown-date__wrapper {
+    position: absolute;
+    top: 100%;
+    z-index: 50;
+    left: 0;
+    margin-top: 0.5px;
+    height: 0;
+
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+
+    transition: height 0.5s ease;
+}
+
+.dropdown-date__wrapper--open{
+    height: 300px;
+}

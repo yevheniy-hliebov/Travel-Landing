@@ -428,6 +428,17 @@
                             <h4 class="card-appart__title">
                                 <a href="" class="card-appart__title-link">Reine</a>
                             </h4>
+
+                            <div class="card-appart__rating">
+                                <input class="rating"
+                                       max="5"
+                                       disabled
+                                       oninput="if (!this.hasAttribute('disabled')){this.style.setProperty('--value', `${this.valueAsNumber}`)}"
+                                       step="0.5"
+                                       style="--value:5"
+                                       type="range"
+                                       value="5">
+                            </div>
                         </div>
                         <div class="card-appart__price">$720</div>
                     </div>
@@ -439,6 +450,17 @@
                             <h4 class="card-appart__title">
                                 <a href="" class="card-appart__title-link">NORWAY</a>
                             </h4>
+
+                             <div class="card-appart__rating">
+                                <input class="rating"
+                                       max="5"
+                                       disabled
+                                       oninput="if (!this.hasAttribute('disabled')){this.style.setProperty('--value', `${this.valueAsNumber}`)}"
+                                       step="0.5"
+                                       style="--value:4"
+                                       type="range"
+                                       value="4">
+                            </div>
                         </div>
                         <div class="card-appart__price">$350</div>
                     </div>
@@ -450,33 +472,121 @@
                             <h4 class="card-appart__title">
                                 <a href="" class="card-appart__title-link">Bergen</a>
                             </h4>
+
+                             <div class="card-appart__rating">
+                                <input class="rating"
+                                       max="5"
+                                       disabled
+                                       oninput="if (!this.hasAttribute('disabled')){this.style.setProperty('--value', `${this.valueAsNumber}`)}"
+                                       step="0.5"
+                                       style="--value:4.5"
+                                       type="range"
+                                       value="4.5">
+                            </div>
                         </div>
                         <div class="card-appart__price">$670</div>
                     </div>
                 </div>
 
-                <form class="appart__search-form search-form">
-                    <div class="search-form__input-list">
-                        <div class="search-form__input-item">
-                            <div class="search-form__title">Date</div>
-                            <div class="search-form__select dropdown-btn-form">
-                                <button class="search-form__select-btn dropdown-btn-form__btn">Select</button>
-                                <ul class="search-form__select-list dropdown-btn-form__list">
-                                    <li class="search-form__select-list-item dropdown-btn-form__list-item" data-value="Mon, 2 Nov">Mon, 2 Nov</li>
-                                    <li class="search-form__select-list-item dropdown-btn-form__list-item" data-value="Tue, 3 Nov">Tue, 3 Nov</li>
-                                    <li class="search-form__select-list-item dropdown-btn-form__list-item" data-value="Wen, 4 Nov">Wen, 4 Nov</li>
-                                    <li class="search-form__select-list-item dropdown-btn-form__list-item" data-value="Thu, 5 Nov">Thu, 5 Nov</li>
-                                    <li class="search-form__select-list-item dropdown-btn-form__list-item" data-value="Fri, 6 Nov">Fri, 6 Nov</li>
-                                    <li class="search-form__select-list-item dropdown-btn-form__list-item" data-value="Sat, 7 Nov">Sat, 7 Nov</li>
-                                    <li class="search-form__select-list-item dropdown-btn-form__list-item" data-value="Sun, 8 Nov">Sun, 8 Nov</li>
-                                </ul>
-                                <input class="dropdown-btn-form__value" type="text" name="date" value="" style="display: none;">
+                <form class="appart__search search-form">
+                    <div class="search-form__inputs">
+                        <div class="search-form__input-block">
+                            <div class="search-form__input-title">Date</div>
+    
+                            <div class="search-form__input-item dropdown-date">
+                                <button data-date-format='{ "weekday":"short", "day":"numeric", "month":"short"}' type="button" class="search-form__input-btn dropdown-date__btn">Date</button>
+                                <input type="date" name="date" id="date" value="" style="display: none;">
+                                <div class="dropdown-date__wrapper">
+                                    <!-- Calendar -->
+                                    <div class="calendar">
+                                        <div class="calendar__header">
+                                            <div class="calendar__month-year">
+                                                Січень 2023
+                                            </div>
+                    
+                                            <div class="calendar__nav-btns">
+                                                <div class="calendar__nav-btn calendar__nav-btn--prev">
+                                                    Prev
+                                                </div>
+                                                <div class="calendar__nav-btn calendar__nav-btn--next">
+                                                    Next
+                                                </div>
+                                            </div>
+                                        </div>
+                    
+                                        <div class="calendar__table">
+                                            <ul class="calendar__week-days">
+                                                <li class="calendar__week-day">Пн</li>
+                                                <li class="calendar__week-day">Вт</li>
+                                                <li class="calendar__week-day">Ср</li>
+                                                <li class="calendar__week-day">Чт</li>
+                                                <li class="calendar__week-day">Пт</li>
+                                                <li class="calendar__week-day">Сб</li>
+                                                <li class="calendar__week-day">Нд</li>
+                                            </ul>
+                                
+                                            <ul class="calendar__list-date">
+                                                <li data-value="2022-01-26" class="calendar__item-date calendar__item-date--prev-month">26</li>
+                                                <li data-value="2022-01-27" class="calendar__item-date calendar__item-date--prev-month">27</li>
+                                                <li data-value="2022-01-28" class="calendar__item-date calendar__item-date--prev-month">28</li>
+                                                <li data-value="2022-01-29" class="calendar__item-date calendar__item-date--prev-month">29</li>
+                                                <li data-value="2022-01-30" class="calendar__item-date calendar__item-date--prev-month">30</li>
+                                                <li data-value="2022-01-31" class="calendar__item-date calendar__item-date--prev-month">31</li>
+                                                <li data-value="2023-01-01" class="calendar__item-date">1</li>
+                                                <li data-value="2023-01-02" class="calendar__item-date">2</li>
+                                                <li data-value="2023-01-03" class="calendar__item-date">3</li>
+                                                <li data-value="2023-01-04" class="calendar__item-date">4</li>
+                                                <li data-value="2023-01-05" class="calendar__item-date">5</li>
+                                                <li data-value="2023-01-06" class="calendar__item-date">6</li>
+                                                <li data-value="2023-01-07" class="calendar__item-date">7</li>
+                                                <li data-value="2023-01-08" class="calendar__item-date">8</li>
+                                                <li data-value="2023-01-09" class="calendar__item-date">9</li>
+                                                <li data-value="2023-01-10" class="calendar__item-date">10</li>
+                                                <li data-value="2023-01-11" class="calendar__item-date">11</li>
+                                                <li data-value="2023-01-12" class="calendar__item-date">12</li>
+                                                <li data-value="2023-01-13" class="calendar__item-date">13</li>
+                                                <li data-value="2023-01-14" class="calendar__item-date">14</li>
+                                                <li data-value="2023-01-15" class="calendar__item-date">15</li>
+                                                <li data-value="2023-01-16" class="calendar__item-date">16</li>
+                                                <li data-value="2023-01-17" class="calendar__item-date">17</li>
+                                                <li data-value="2023-01-18" class="calendar__item-date">18</li>
+                                                <li data-value="2023-01-19" class="calendar__item-date">19</li>
+                                                <li data-value="2023-01-20" class="calendar__item-date">20</li>
+                                                <li data-value="2023-01-21" class="calendar__item-date">21</li>
+                                                <li data-value="2023-01-22" class="calendar__item-date">22</li>
+                                                <li data-value="2023-01-23" class="calendar__item-date">23</li>
+                                                <li data-value="2023-01-24" class="calendar__item-date">24</li>
+                                                <li data-value="2023-01-25" class="calendar__item-date">25</li>
+                                                <li data-value="2023-01-26" class="calendar__item-date">26</li>
+                                                <li data-value="2023-01-27" class="calendar__item-date">27</li>
+                                                <li data-value="2023-01-28" class="calendar__item-date">28</li>
+                                                <li data-value="2023-01-29" class="calendar__item-date">29</li>
+                                                <li data-value="2023-01-30" class="calendar__item-date">30</li>
+                                                <li data-value="2023-01-31" class="calendar__item-date">31</li>
+                                                <li data-value="2023-01-01" class="calendar__item-date calendar__item-date--next-month">1</li>
+                                                <li data-value="2023-01-02" class="calendar__item-date calendar__item-date--next-month">2</li>
+                                                <li data-value="2023-01-03" class="calendar__item-date calendar__item-date--next-month">3</li>
+                                                <li data-value="2023-01-04" class="calendar__item-date calendar__item-date--next-month">4</li>
+                                                <li data-value="2023-01-05" class="calendar__item-date calendar__item-date--next-month">5</li>
+                                            </ul>
+                                        </div>
+                    
+                                        <div class="calendar__footer">
+                                            <div class="calendar__actions">
+                                                <button type="button" class="calendar__btn calendar__btn--reset">Очистити</button>
+                                                <button type="button" class="calendar__btn calendar__btn--today">Сьогодні</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="search-form__input-item">
-                            <div class="search-form__title">Location</div>
-                            <div class="search-form__select dropdown-btn-form">
-                                <button class="search-form__select-btn dropdown-btn-form__btn">Select</button>
+                        <div class="search-form__input-block">
+                            <div class="search-form__input-title">Location</div>
+                            <div class="search-form__input-item dropdown-btn-form">
+                                <button class="search-form__input-btn dropdown-btn-form__btn" type="button">Location</button>
+                                <input class="dropdown-btn-form__value" type="text" name="location" value="" style="display: none;">
+
                                 <ul class="search-form__select-list dropdown-btn-form__list">
                                     <li class="search-form__select-list-item dropdown-btn-form__list-item" data-value="Morocco">Morocco</li>
                                     <li class="search-form__select-list-item dropdown-btn-form__list-item" data-value="Noraway">Noraway</li>
@@ -484,25 +594,25 @@
                                     <li class="search-form__select-list-item dropdown-btn-form__list-item" data-value="Finland">Finland</li>
                                     <li class="search-form__select-list-item dropdown-btn-form__list-item" data-value="Philippines">Philippines</li>
                                 </ul>
-                                <input class="dropdown-btn-form__value" type="text" name="date" value="" style="display: none;">
                             </div>
                         </div>
-                        <div class="search-form__input-item">
-                            <div class="search-form__title">PLACE</div>
-                            <div class="search-form__select dropdown-btn-form">
-                                <button class="search-form__select-btn dropdown-btn-form__btn">Select</button>
+                        <div class="search-form__input-block">
+                            <div class="search-form__input-title">Place</div>
+                            <div class="search-form__input-item dropdown-btn-form">
+                                <button class="search-form__input-btn dropdown-btn-form__btn" type="button">Place</button>
+                                <input class="dropdown-btn-form__value" type="text" name="place" value="" style="display: none;">
+
                                 <ul class="search-form__select-list dropdown-btn-form__list">
                                     <li class="search-form__select-list-item dropdown-btn-form__list-item" data-value="Andorra la Vella">Andorra la Vella</li>
                                     <li class="search-form__select-list-item dropdown-btn-form__list-item" data-value="Helsinki">Helsinki</li>
                                     <li class="search-form__select-list-item dropdown-btn-form__list-item" data-value="Manila">Manila</li>
                                     <li class="search-form__select-list-item dropdown-btn-form__list-item" data-value="Valletta">Valletta</li>
                                 </ul>
-                                <input class="dropdown-btn-form__value" type="text" name="date" value="" style="display: none;">
                             </div>
                         </div>
+                        <button class="search-form__btn-submit" type="submit">SEARCH</button>
                     </div>
 
-                    <button class="search-form__btn">SEARCH</button>
                 </form>
             </div>
         </section>
@@ -575,5 +685,6 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/dropdown.js"></script>
+    <script src="./js/dropdown-date.js"></script>
 </body>
 </html>
